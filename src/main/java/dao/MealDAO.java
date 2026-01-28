@@ -19,7 +19,7 @@ public class MealDAO {
     private static final String DELETE_MEAL = "DELETE FROM meals WHERE id = ?";
 
 
-// C
+    // C
     public int createMeal(Meal meal) throws SQLException {
         try (Connection conn = Database.getConnection();
              PreparedStatement stmt = conn.prepareStatement(CREATE_MEAL)) {
@@ -30,7 +30,8 @@ public class MealDAO {
             }
         }
     }
-// R
+
+    // R
     public Meal getMealById(int id) throws SQLException {
         try (Connection conn = Database.getConnection();
         PreparedStatement stmt = conn.prepareStatement(GET_MEAL_BY_ID)) {
@@ -68,7 +69,8 @@ public class MealDAO {
     public List<Meal> listMealsByArea(int areaId) throws SQLException {
         return listMealsByIntParam(LIST_MEALS_BY_AREA, areaId);
     }
-// U
+
+    // U
     public boolean updateMeal(Meal meal) throws SQLException {
         try (Connection conn = Database.getConnection();
         PreparedStatement stmt = conn.prepareStatement(UPDATE_MEAL)) {
@@ -77,7 +79,8 @@ public class MealDAO {
             return stmt.executeUpdate() == 1;
         }
     }
-// D
+
+    // D
     public boolean deleteMealById(int id) throws SQLException {
         try (Connection conn = Database.getConnection();
         PreparedStatement stmt = conn.prepareStatement(DELETE_MEAL)) {
@@ -85,7 +88,8 @@ public class MealDAO {
             return stmt.executeUpdate() == 1;
         }
     }
-// Helper
+
+    // Helper
     private void bindMealParams(PreparedStatement stmt, Meal meal) throws SQLException {
         stmt.setString(1, meal.getName());
         stmt.setObject(2, meal.getCategory_id(), Types.INTEGER);
