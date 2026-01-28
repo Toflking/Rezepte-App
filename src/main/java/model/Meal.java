@@ -1,3 +1,5 @@
+package model;
+
 import java.sql.Timestamp;
 
 public class Meal {
@@ -112,7 +114,7 @@ public class Meal {
 
    @Override
    public String toString() {
-      return "Meal{" +
+      return "model.Meal{" +
               "id=" + id +
               ", external_id=" + external_id +
               ", name='" + name + '\'' +

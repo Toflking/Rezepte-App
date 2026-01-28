@@ -1,3 +1,5 @@
+package model;
+
 public class MealIngredient {
     private int meal_id;
     private int ingredient_id;
@@ -29,7 +31,7 @@ public class MealIngredient {
 
     @Override
     public String toString() {
-        return "MealIngredient{" +
+        return "model.MealIngredient{" +
                 "ingredient_id=" + ingredient_id +
                 ", meal_id=" + meal_id +
                 ", measure='" + measure + '\'' +

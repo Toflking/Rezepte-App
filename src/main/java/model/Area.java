@@ -1,4 +1,6 @@
-public class Ingredient {
+package model;
+
+public class Area {
     private int id;
     private String name;
 
@@ -20,7 +22,7 @@ public class Ingredient {
 
     @Override
     public String toString() {
-        return "Ingredient{" +
+        return "model.Area{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
