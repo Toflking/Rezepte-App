@@ -6,8 +6,8 @@ public class Meal {
    private int id;
    private int external_id;
    private String name;
-   private int category_id;
-   private int area_id;
+   private Integer category_id;
+   private Integer area_id;
    private String instructions;
    private String thumb;
    private String youtube;
@@ -40,19 +40,19 @@ public class Meal {
       this.name = name;
    }
 
-   public int getCategory_id() {
+   public Integer getCategory_id() {
       return category_id;
    }
 
-   public void setCategory_id(int category_id) {
+   public void setCategory_id(Integer category_id) {
       this.category_id = category_id;
    }
 
-   public int getArea_id() {
+   public Integer getArea_id() {
       return area_id;
    }
 
-   public void setArea_id(int area_id) {
+   public void setArea_id(Integer area_id) {
       this.area_id = area_id;
    }
 
