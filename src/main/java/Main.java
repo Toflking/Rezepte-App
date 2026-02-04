@@ -1,11 +1,21 @@
-import db.Database;
 import db.DbInit;
-
-import java.sql.Connection;
+import javafx.application.Application;
 import java.sql.SQLException;
 
-class Main {
-    public static void main(String[] args) throws SQLException {
-        DbInit.checkConnection();
+public class Main {
+    public static void main(String[] args) {
+        try {
+            // 1. Check DB Connection first
+            System.out.println("Checking database connection...");
+            DbInit.checkConnection();
+            System.out.println("Database connection successful!");
+
+            // 2. Launch JavaFX
+            Application.launch(App.class, args);
+
+        } catch (SQLException e) {
+            System.err.println("Could not connect to the database. UI will not start.");
+            e.printStackTrace();
+        }
     }
 }
