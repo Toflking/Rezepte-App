@@ -12,6 +12,7 @@ public class MealDAO {
     private static final String CREATE_MEAL = "INSERT INTO meals (name, category_id, area_id, instructions, thumb, youtube, source, tags) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_MEAL_BY_ID = "SELECT * FROM meals WHERE id = ?";
     private static final String LIST_MEALS = "SELECT * FROM meals";
+    private static final String LIST_MEALS_BY_NAME_CONTAINS = "SELECT * FROM meals WHERE name LIKE ? ORDER BY name";
     private static final String LIST_MEALS_BY_INGREDIENT = "SELECT DISTINCT m.* FROM meals m JOIN meal_ingredients mi ON mi.meal_id = m.id WHERE mi.ingredient_id = ?";
     private static final String LIST_MEALS_BY_CATEGORY = "SELECT * FROM meals WHERE category_id = ?";
     private static final String LIST_MEALS_BY_AREA = "SELECT * FROM meals WHERE area_id = ?";
@@ -53,6 +54,21 @@ public class MealDAO {
             while (rs.next()) {
                 Meal meal = buildMeal(rs);
                 meals.add(meal);
+            }
+        }
+        return meals;
+    }
+
+    public List<Meal> listMealsByNameContains(String letters) throws SQLException {
+        List<Meal> meals = new ArrayList<>();
+        try (Connection conn = Database.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(LIST_MEALS_BY_NAME_CONTAINS)) {
+            stmt.setString(1, "%" + letters + "%");
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Meal meal = buildMeal(rs);
+                    meals.add(meal);
+                }
             }
         }
         return meals;
