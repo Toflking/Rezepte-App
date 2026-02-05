@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryDAO {
-
+    // SQL Strings
     private static final String CREATE_CATEGORY = "INSERT INTO categories (name) VALUES (?)";
     private static final String GET_CATEGORY_BY_ID = "SELECT * FROM categories WHERE id = ?";
     private static final String GET_CATEGORY_BY_NAME = "SELECT * FROM categories WHERE name = ?";

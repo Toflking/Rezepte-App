@@ -3,6 +3,7 @@ package model;
 import java.sql.Timestamp;
 
 public class Meal {
+   // Klassenvariablen
    private int id;
    private int external_id;
    private String name;
@@ -16,6 +17,7 @@ public class Meal {
    private Timestamp created_at;
    private Timestamp updated_at;
 
+   // Getter und Setter
    public int getId() {
       return id;
    }
@@ -112,6 +114,7 @@ public class Meal {
       this.updated_at = updated_at;
    }
 
+   // toString methode
    @Override
    public String toString() {
       return "model.Meal{" +

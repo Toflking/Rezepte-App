@@ -8,7 +8,6 @@ public class Main {
             // 1. Check DB Connection first
             System.out.println("Checking database connection...");
             DbInit.checkConnection();
-            System.out.println("Database connection successful!");
 
             // 2. Launch JavaFX
             Application.launch(App.class, args);

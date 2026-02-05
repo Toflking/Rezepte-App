@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IngredientDAO {
-
+    // SQL Strings
     private static final String CREATE_INGREDIENT = "INSERT INTO ingredients (name) VALUES (?)";
     private static final String GET_INGREDIENT_BY_ID = "SELECT * FROM ingredients WHERE id = ?";
     private static final String GET_INGREDIENT_BY_NAME = "SELECT * FROM ingredients WHERE name = ?";

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MealDAO {
-
+    // SQL Strings
     private static final String CREATE_MEAL = "INSERT INTO meals (name, category_id, area_id, instructions, thumb, youtube, source, tags) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String GET_MEAL_BY_ID = "SELECT * FROM meals WHERE id = ?";
     private static final String LIST_MEALS = "SELECT * FROM meals";

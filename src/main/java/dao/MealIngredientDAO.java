@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MealIngredientDAO {
-
+    // SQL Strings
     private static final String LIST_INGREDIENTS_BY_MEAL_ID = "SELECT mi.meal_id, mi.ingredient_id, i.name AS ingredient_name, mi.measure FROM meal_ingredients mi JOIN ingredients i ON mi.ingredient_id = i.id WHERE mi.meal_id = ?";
 
     public List<MealIngredient> listIngredientsByMealId(int mealId) throws SQLException {

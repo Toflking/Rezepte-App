@@ -1,9 +1,11 @@
 package model;
 
 public class Category {
+    // Klassenvariablen
     private int id;
     private String name;
 
+    // Getter und Setter
     public int getId() {
         return id;
     }
@@ -20,6 +22,7 @@ public class Category {
         this.name = name;
     }
 
+    // toString methode
     @Override
     public String toString() {
         return "model.Category{" +

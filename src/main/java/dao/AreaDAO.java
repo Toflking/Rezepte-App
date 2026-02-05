@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AreaDAO {
-
+    // SQL Strings
     private static final String CREATE_AREA = "INSERT INTO areas (name) VALUES (?)";
     private static final String GET_AREA_BY_ID = "SELECT * FROM areas WHERE id = ?";
     private static final String GET_AREA_BY_NAME = "SELECT * FROM areas WHERE name = ?";
