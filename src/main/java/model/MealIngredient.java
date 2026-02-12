@@ -1,5 +1,6 @@
 package model;
 
+// Klasse für MealIngredient Objekte
 public class MealIngredient {
     // Klassenvariablen
     private int meal_id;

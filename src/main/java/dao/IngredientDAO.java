@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// Backend
+// Alle Methoden für Ingredient Objekte
 public class IngredientDAO {
     // SQL Strings
     private static final String CREATE_INGREDIENT = "INSERT INTO ingredients (name) VALUES (?)";

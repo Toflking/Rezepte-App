@@ -10,10 +10,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+// Backend
+// Alle Methoden für MealIngredient Objekte
 public class MealIngredientDAO {
     // SQL Strings
     private static final String LIST_INGREDIENTS_BY_MEAL_ID = "SELECT mi.meal_id, mi.ingredient_id, i.name AS ingredient_name, mi.measure FROM meal_ingredients mi JOIN ingredients i ON mi.ingredient_id = i.id WHERE mi.meal_id = ?";
 
+    // R
     public List<MealIngredient> listIngredientsByMealId(int mealId) throws SQLException {
         List<MealIngredient> mealIngredients = new ArrayList<>();
         try (Connection conn = Database.getConnection();
@@ -27,6 +30,7 @@ public class MealIngredientDAO {
         return mealIngredients;
     }
 
+    // Helper
     private MealIngredient buildMealIngredient(ResultSet rs) throws SQLException {
         MealIngredient mealIngredient = new MealIngredient();
         mealIngredient.setMeal_id(rs.getInt("mi.meal_id"));

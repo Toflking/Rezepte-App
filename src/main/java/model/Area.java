@@ -1,5 +1,6 @@
 package model;
 
+// Klasse für Area Objekte
 public class Area {
     // Klassenvariablen
     private int id;

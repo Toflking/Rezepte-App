@@ -5,8 +5,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+// Für die Verbindung mit der DB
 public class Database {
-
+    // .env File laden
     private static final Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
     // Datenbank Details aus dem .env laden
     private static final String URL = dotenv.get("DB_URL");

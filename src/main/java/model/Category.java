@@ -1,5 +1,6 @@
 package model;
 
+// Klasse für Category Objekte
 public class Category {
     // Klassenvariablen
     private int id;

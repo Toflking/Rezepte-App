@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// Backend
+// Alle Methoden für Meals Objekte
 public class MealDAO {
     // SQL Strings
     private static final String CREATE_MEAL = "INSERT INTO meals (name, category_id, area_id, instructions, thumb, youtube, source, tags) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

@@ -2,7 +2,7 @@ package db;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-
+// Für die Initialisierung der DB
 public class DbInit {
     // Überprüft Connection und gibt entsprechenden Konsolen output
     public static void checkConnection() throws SQLException {

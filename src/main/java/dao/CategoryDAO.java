@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// Backend
+// Alle Methoden für Category Objekte
 public class CategoryDAO {
     // SQL Strings
     private static final String CREATE_CATEGORY = "INSERT INTO categories (name) VALUES (?)";

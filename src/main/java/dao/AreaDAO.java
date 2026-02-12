@@ -7,6 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// Backend
+// Alle Methoden für Area Objekte
 public class AreaDAO {
     // SQL Strings
     private static final String CREATE_AREA = "INSERT INTO areas (name) VALUES (?)";
@@ -75,7 +77,7 @@ public class AreaDAO {
             return stmt.executeUpdate() == 1;
         }
     }
-
+    // Helper
     private Area buildArea(ResultSet rs) throws SQLException {
         Area area = new Area();
         area.setId(rs.getInt("id"));

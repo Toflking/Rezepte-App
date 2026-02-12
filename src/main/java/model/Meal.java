@@ -2,6 +2,7 @@ package model;
 
 import java.sql.Timestamp;
 
+// Klasse für Meal Objekte
 public class Meal {
    // Klassenvariablen
    private int id;

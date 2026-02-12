@@ -12,11 +12,14 @@ import javafx.scene.control.Alert;
 import java.sql.SQLException;
 import java.util.List;
 
+// Hauptmethode für das Frontend, kontrolliert alle Vorgänge in der App
 public class MainController {
 
+    // Felder in der App
     @FXML private ListView<String> mealList;
     @FXML private TextField searchField;
 
+    // Erstellen der Objekte
     private final MealDAO mealDAO = new MealDAO();
     private final Service service = new Service();
     private final PauseTransition debounce = new PauseTransition(Duration.millis(300));
@@ -24,6 +27,7 @@ public class MainController {
     // initialize wird ähnlich wie main automatisch ausgeführt, jedoch erst, nachdem das fxml file geladen wurde
     @FXML
     public void initialize() {
+        // lädt die meal list
         refreshMealList();
 
         // debounce um nicht zu viele DB anfragen zu machen
@@ -34,16 +38,17 @@ public class MainController {
     }
 
     @FXML
+    // um die meal list zu laden
     private void refreshMealList() {
         try {
-            // Use your friend's 'listMeals' method
+            // ListMeals methode benutzen um alle Meals zu bekommen
             List<Meal> meals = mealDAO.listMeals();
 
-            // Clear the UI list before adding new items
+            // Ui clearen vor dem einfügen
             mealList.getItems().clear();
 
             for (Meal meal : meals) {
-                // Use your model's 'getName' method
+                // Für alle Meals die Namen in die Liste eintragen
                 mealList.getItems().add(meal.getName());
             }
         } catch (SQLException e) {
@@ -74,13 +79,15 @@ public class MainController {
             Throwable ex = task.getException();
             showError("Database Error", ex != null ? ex.getMessage() : "Unknown error");
         });
+        // thread erstellen mit der task
         Thread t = new Thread(task);
-        // Damit die App sauber schliesst, auch wenn eine Task noch am Laufen ist
+        // Damit die App sauber schliesst, auch wenn ein Task noch am Laufen ist
         t.setDaemon(true);
         t.start();
 
     }
 
+    // helper methode um errors in der app anzuzeigen
     private void showError(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
